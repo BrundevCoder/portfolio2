@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background: #98abff;
+    color: #000;
+}
+
 body {
     font-family: "Raleway", sans-serif;
     min-height: 100vh;
@@ -32,12 +37,77 @@ body {
     content: "";
     position: absolute;
     background: #fff;
+    border-radius: 50px;
     width: 0%;
     height: 3px;
-    bottom: 0;
+    bottom: -2px;
     transition: width 150ms ease;
 }
 
 .header p:hover:before {
     width: 100%;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "intro";
+    min-height: 80vh;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area: intro;
+}
+
+.intro p {
+    text-align: center;
+    font-style: italic;
+    color: #fff;
+    font-size: 75px;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.33);
+}
+
+.intro p span {
+    position: relative;
+}
+
+.intro p span::before {
+    content: "";
+    position: absolute;
+    background: #fff;
+    border-radius: 50px;
+    width: 0%;
+    height: 3px;
+    bottom: -2px;
+    transition: width 150ms ease;
+}
+
+.intro p span:hover:before {
+    width: 100%;
+}
+
+.arrow-container {
+    rotate: 180deg;
+}
+
+.arrow-container span {
+    user-select: none;
+    color: #fff;
+    font-size: 55px;
+    animation: arrow-up-and-down 2s ease infinite;
+}
+
+@keyframes arrow-up-and-down {
+    0%, 100% {
+        transform: translateY(15px);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
 }
