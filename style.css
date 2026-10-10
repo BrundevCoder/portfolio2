@@ -112,6 +112,10 @@ body {
 }
 
 .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     grid-area: about;
 }
 
@@ -120,6 +124,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 25px;
 }
 
 .about img {
@@ -163,6 +168,65 @@ body {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.33);
 }
 
+.projects-grid {
+    padding-top: 1.5rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 20px;
+}
+
+.project {
+    border: 3px solid transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background: #233ba8;
+    border-radius: 5px;
+    padding-bottom: 15px;
+    transition: 150ms ease;
+}
+
+.project:hover, .project:focus {
+    transform: translateY(-3px);
+    border: 3px solid #208ec5;
+}
+
+.project-title {
+    font-size: 17px;
+    text-align: center;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-style: italic;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.33);
+}
+
+.project img {
+    aspect-ratio: 16/8;
+    width: 100%;
+    border-start-end-radius: 5px;
+    border-start-start-radius: 5px;
+}
+
+.link {
+    text-align: center;
+    background: #3252e2;
+    color: #98abff;
+    font-family: "Raleway";
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.link-pj {
+    text-decoration: underline;
+    color: #fff;
+}
+
 @keyframes arrow-up-and-down {
     0%, 100% {
         transform: translateY(15px);
@@ -179,3 +243,4 @@ body {
         flex-direction: column;
     }
 }
+
